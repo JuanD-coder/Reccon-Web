@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 150 30% 12%;
+    --card: 100 30% 97%;
+    --card-foreground: 150 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+    --primary: 142 52% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 100 40% 94%;
+    --secondary-foreground: 142 52% 28%;
+    --muted: 100 20% 94%;
+    --muted-foreground: 150 10% 44%;
+    --accent: 0 72% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 100 15% 88%;
+    --input: 100 15% 88%;
+    --ring: 142 52% 32%;
+    --chart-1: 142 52% 32%;
+    --chart-2: 0 72% 44%;
+    --chart-3: 45 92% 55%;
+    --chart-4: 100 40% 70%;
+    --chart-5: 150 30% 50%;
+    --radius: 0.75rem;
+    --yellow: 45 92% 55%;
+    --yellow-foreground: 45 80% 16%;
+    --sidebar-background: 100 30% 97%;
+    --sidebar-foreground: 150 30% 12%;
+    --sidebar-primary: 142 52% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 100 40% 94%;
+    --sidebar-accent-foreground: 142 52% 28%;
+    --sidebar-border: 100 15% 88%;
+    --sidebar-ring: 142 52% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes wave-shift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-wave {
+  animation: wave-shift 8s linear infinite;
+}
+
+.animate-wave-slow {
+  animation: wave-shift 12s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-leaf {
+  animation: leaf-sway 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
