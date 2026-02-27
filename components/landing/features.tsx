@@ -7,29 +7,29 @@ import { CoffeeBean, CoffeeLeaf, CoffeeCherries, CoffeeBasket } from "./coffee-e
 const features = [
   {
     icon: Smartphone,
-    title: "Facil de usar",
-    desc: "Interfaz simple e intuitiva disenada para cualquier caficultor, sin necesidad de experiencia tecnica.",
+    title: "Registros digitales seguros",
+    desc: "Anota cada recolección en segundos y evita perder información con el tiempo.",
     Decoration: CoffeeBean,
     gradient: "from-primary/8 to-primary/3",
   },
   {
     icon: WifiOff,
-    title: "Funciona sin conexion",
-    desc: "Disenada para zonas rurales sin cobertura. Toda la informacion se guarda en tu dispositivo.",
+    title: "Diseñada para trabajar en campo",
+    desc: "Registra datos aunque no haya señal. Todo se guarda en tu dispositivo.",
     Decoration: CoffeeLeaf,
     gradient: "from-primary/6 to-transparent",
   },
   {
     icon: BarChart3,
-    title: "Control de tu cosecha",
-    desc: "Registra recolectores, kilos diarios y pagos con calculo automatico al instante.",
+    title: "Cálculos automáticos al instante",
+    desc: "Pagos precisos sin sumar a mano. Evita errores diarios.",
     Decoration: CoffeeCherries,
     gradient: "from-accent/5 to-transparent",
   },
   {
     icon: FileSpreadsheet,
-    title: "Informes de recoleccion",
-    desc: "Genera reportes profesionales en Excel listos para compartir con socios o administradores.",
+    title: "Historial claro de producción",
+    desc: "Genera reportes profesionales en Excel listos para compartir con socios o administradores.  -Consulta temporadas, compara resultados y toma decisiones con datos reales.",
     Decoration: CoffeeBasket,
     gradient: "from-primary/5 to-primary/2",
   },
@@ -49,7 +49,7 @@ export function Features() {
   return (
     <section
       id="funciones"
-      className="relative overflow-hidden py-20 lg:py-28"
+      className="relative overflow-hidden py-8 lg:py-8"
       style={{
         background:
           "linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(100 30% 97%) 50%, hsl(0 0% 100%) 100%)",
@@ -63,10 +63,7 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            Funcionalidades
-          </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-sans text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             <span className="text-balance">
               Todo lo que necesitas para manejar tu cosecha
             </span>

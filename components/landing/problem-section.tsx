@@ -192,7 +192,7 @@ export function ProblemSection() {
                   />
 
                   {/* Description */}
-                  <p className="relative text-sm leading-relaxed text-muted-foreground">
+                  <p className="relative text-sm leading-relaxed text-zinc-800 dark:text-zinc-400">
                     {problem.desc}
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export function ProblemSection() {
           <span className="text-lg">🌿</span>
           <p className="text-center text-sm font-medium text-foreground lg:text-base">
             El campo ya trabaja duro.{" "}
-            <span className="font-bold" style={{ color: "hsl(35 92% 70%)" }}>
+            <span className="font-bold" style={{ color: "hsl(35 92% 50%)" }}>
               El control no debería complicarlo.
             </span>
           </p>

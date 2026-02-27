@@ -32,7 +32,7 @@ export function Hero() {
         style={{ background: "hsl(0 72% 55%)" }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-12 px-6 pt-28 pb-36 lg:flex-row lg:gap-20 lg:pt-32 lg:pb-44">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-12 px-6 pt-28 pb-10 lg:flex-row lg:gap-20 lg:pt-32 lg:pb-16">
         {/* Left: Hero image */}
         <motion.div
           initial={{ opacity: 0, x: -50, scale: 0.95 }}
@@ -71,6 +71,11 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
           className="flex-1 text-center lg:text-left"
         >
+
+          <span className="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+            - Tecnología para el campo -
+          </span>
+
           <h1 className="mb-6 font-sans text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
             <span className="text-balance">
               Controla tu{" "}
@@ -111,10 +116,12 @@ export function Hero() {
               />
               <div>
                 <div className="text-xs text-left">
+                  Get It On
                 </div>
                 <b> Google Play </b>
               </div>
             </motion.a>
+
             <motion.a
               whileHover={{ scale: 1.05, boxShadow: "0 12px 30px -8px hsl(0 72% 44% / 0.3)" }}
               whileTap={{ scale: 0.97 }}
