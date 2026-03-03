@@ -48,7 +48,7 @@ export function WaveAnimation() {
       >
         <path
           d="M0,90 C480,30 960,110 1440,70 C1920,30 2400,100 2880,70 L2880,150 L0,150Z"
-          fill="hsl(var(--background))"
+          fill="hsl(140 30% 96%)"
         />
       </svg>
     </motion.div>

@@ -48,10 +48,10 @@ export function ProblemSection() {
   return (
     <section
       id="problema"
-      className="relative overflow-hidden py-8 lg:py-8"
+      className="relative overflow-hidden pt-16 pb-10"
       style={{
         background:
-          "linear-gradient(170deg, hsl(0 0% 100%) 0%, hsl(30 40% 97%) 40%, hsl(0 30% 97%) 70%, hsl(0 0% 100%) 100%)",
+          "linear-gradient(180deg, transparent 0%, hsl(30 40% 98%) 40%, hsl(0 30% 98%) 80%, #ffffff 100%)",
       }}
     >
       {/* Subtle background blobs */}
@@ -139,63 +139,44 @@ export function ProblemSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
-                className="group relative flex flex-col overflow-hidden"
-                style={{
-                  borderRight: i < problems.length - 1 ? "1px solid hsl(0 72% 52% / 0.1)" : undefined,
-                }}
+                className="group relative flex flex-col border-b sm:border-b-0 sm:border-r border-slate-200/60 last:border-0"
               >
-                {/* Image header with integrated title */}
-                <div className="relative h-56 overflow-hidden">
+                {/* Image header */}
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={problem.image}
                     alt={problem.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
 
-                  {/* Blurred text protection layer */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px]" />
-
-                  {/* Emoji & Title Overlay */}
-                  <div className="absolute bottom-5 left-6 flex items-center gap-2">
-                    <motion.span
-                      initial={{ scale: 1 }}
-                      whileHover={{ scale: 1.2, rotate: -8 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      className="text-3xl select-none drop-shadow-md"
-                      aria-hidden="true"
-                    >
-                      {problem.emoji}
-                    </motion.span>
-                    <h3 className="text-lg font-bold leading-tight text-white drop-shadow-md">
-                      {problem.title}
-                    </h3>
+                  {/* Floating Emoji Badge */}
+                  <div className="absolute top-4 left-4 h-12 w-12 rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+                    <span className="text-2xl select-none">{problem.emoji}</span>
                   </div>
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Content */}
-                <div className="relative flex flex-col gap-4 px-7 py-4">
-                  {/* Hover background fill */}
-                  <div
-                    className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    style={{ background: problem.accentBg }}
-                  />
+                {/* Content Area */}
+                <div className="relative flex flex-col gap-3 px-8 py-7 flex-1 transition-colors duration-500 group-hover:bg-slate-50">
+                  {/* Identificador Sutil */}
+                  <div className="h-1 w-8 rounded-full transition-all duration-500 group-hover:w-16" style={{ background: problem.accent }} />
 
-                  {/* Accent line */}
-                  <motion.div
-                    className="relative h-[2px] w-10 rounded-full origin-left"
-                    initial={{ scaleX: 1 }}
-                    whileHover={{ scaleX: 2 }}
-                    transition={{ duration: 0.3 }}
-                    style={{ background: problem.accent }}
-                  />
+                  <h3 className="text-xl font-black text-slate-950 tracking-tight leading-tight mt-1">
+                    {problem.title}
+                  </h3>
 
-                  {/* Description */}
-                  <p className="relative text-sm leading-relaxed text-zinc-800 dark:text-zinc-400">
+                  <p className="text-sm leading-relaxed text-slate-600 font-medium">
                     {problem.desc}
                   </p>
                 </div>
+
+                {/* Indicador de Hover Inferior */}
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-transparent transition-colors duration-500 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(90deg, transparent, ${problem.accent}, transparent)` }} />
               </motion.div>
             ))}
           </div>

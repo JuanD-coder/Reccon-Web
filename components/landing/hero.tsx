@@ -94,9 +94,9 @@ export function Hero() {
           </h1>
 
           <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
-            Registro digital de tus recolecciones de café de manera rapida y a mantener una contabilidad
-            precisa de tus gastos de una manera sencilla, al alcanze de un dispositivo que te ayuda a
-            llevar un historia de tus recolecciones. Todo en una sola app.
+            Registro digital de tus recolecciones de café de manera rápida y a mantener una contabilidad
+            precisa de tus gastos de una manera sencilla, al alcance de un dispositivo que te ayuda a
+            llevar un historial de tus recolecciones. Todo en una sola app.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">

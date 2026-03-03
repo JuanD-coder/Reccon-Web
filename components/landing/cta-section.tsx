@@ -2,98 +2,138 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { CoffeeCherries, CoffeeLeaf } from "./coffee-elements"
+import { Download, MessageCircle, Sparkles, Trophy, ShieldCheck, Zap } from "lucide-react"
 
 export function CTASection() {
   return (
     <section
-      className="relative overflow-hidden py-20 lg:py-28"
+      id="descarga"
+      className="relative overflow-hidden py-24 lg:py-32"
       style={{
-        background:
-          "linear-gradient(160deg, hsl(142 52% 30%) 0%, hsl(142 48% 26%) 50%, hsl(150 40% 22%) 100%)",
+        background: "linear-gradient(180deg, #ffffff 0%, hsl(142 30% 98%) 50%, #ffffff 100%)"
       }}
     >
-      {/* Background decorations */}
-      <div
-        className="absolute -right-20 -top-20 h-[350px] w-[350px] rounded-full opacity-10 blur-3xl"
-        style={{ background: "hsl(45 92% 55%)" }}
-      />
-      <div
-        className="absolute -left-16 bottom-0 h-[250px] w-[250px] rounded-full opacity-10 blur-3xl"
-        style={{ background: "hsl(142 52% 60%)" }}
-      />
-      <CoffeeLeaf className="absolute right-10 top-10 h-24 w-16 opacity-10" />
-      <CoffeeCherries className="absolute bottom-12 left-10 h-16 w-16 opacity-10" />
-
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-12 px-6 lg:flex-row lg:gap-16">
-        {/* Phone mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="relative flex-shrink-0"
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
+        <div
+          className="relative overflow-hidden rounded-[3rem] bg-slate-950 border border-white/5 shadow-[0_32px_80px_-20px_rgba(76,175,80,0.2)] lg:p-20 p-10 group"
+          style={{
+            background: "linear-gradient(145deg, #0f1c12 0%, #050a06 100%)"
+          }}
         >
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative h-64 w-32 overflow-hidden rounded-3xl border-4 border-primary-foreground/20 shadow-2xl sm:h-80 sm:w-40"
-          >
-            <Image
-              src="/images/phone-mockup.jpg"
-              alt="RECCON app en el celular"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-        </motion.div>
+          {/* Orbs de fondo Antigravity */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#4caf50]/20 rounded-full blur-[140px] -mr-80 -mt-80 opacity-60" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#facc15]/10 rounded-full blur-[100px] -ml-40 -mb-40 opacity-40" />
 
-        {/* Text content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-center lg:text-left"
-        >
-          <h2 className="mb-6 font-serif text-3xl font-bold text-primary-foreground md:text-4xl lg:text-5xl">
-            <span className="text-balance">
-              Empieza a controlar tu cosecha hoy mismo
-            </span>
-          </h2>
-          <p className="mx-auto mb-10 max-w-lg text-base leading-relaxed text-primary-foreground/75 lg:mx-0 lg:text-lg">
-            Unete a los caficultores que ya estan usando RECCON para
-            organizar sus cosechas, calcular pagos y generar reportes.
-            Descarga gratis ahora.
-          </p>
-          <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-            <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 12px 30px -8px hsl(45 92% 55% / 0.4)" }}
-              whileTap={{ scale: 0.97 }}
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl px-8 py-4 text-base font-bold shadow-lg transition-shadow"
-              style={{
-                background: "hsl(var(--yellow))",
-                color: "hsl(var(--yellow-foreground))",
-              }}
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+
+            {/* Contenido de Texto */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.99l-2.302 2.302L6.863 2.658zM18.008 9.89l2.992 1.736-2.992 1.735L15.214 12l2.794-2.11z" />
-              </svg>
-              Descargar en Google Play
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              href="#contacto"
-              className="inline-flex items-center gap-2 rounded-xl border-2 border-primary-foreground/30 px-8 py-4 text-base font-bold text-primary-foreground transition-colors hover:border-primary-foreground/60"
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#4caf50] text-xs font-black uppercase tracking-widest mb-8">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4caf50] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4caf50]"></span>
+                </span>
+                Disponible ahora en Google Play
+              </div>
+
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans font-black text-white leading-[1.05] mb-8 tracking-tighter">
+                Transforma tu <br />
+                <span className="text-[#4caf50] italic">finca hoy.</span>
+              </h2>
+
+              <p className="text-xl text-slate-400 mb-10 leading-relaxed max-w-lg">
+                Únete a la nueva generación de caficultores digitales. <strong className="text-white">Gratis, 100% offline</strong> y diseñada para el corazón del campo.
+              </p>
+
+              <div className="flex flex-wrap gap-5">
+                <motion.a
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject&hl=es_NI"
+                  target="_blank"
+                  className="bg-[#4caf50] hover:bg-[#43a047] text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-3 shadow-2xl shadow-[#4caf50]/30 transition-all duration-300"
+                >
+                  <Download size={24} strokeWidth={3} />
+                  <span>Descargar App</span>
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="#contacto"
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/10 backdrop-blur-xl px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-3 transition-all duration-300"
+                >
+                  <MessageCircle size={24} />
+                  <span>Soporte</span>
+                </motion.a>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="mt-12 flex flex-wrap gap-8 items-center border-t border-white/10 pt-10">
+                <div className="flex items-center gap-3 text-white/60 font-bold text-sm">
+                  <ShieldCheck className="text-[#4caf50]" size={20} />
+                  <span>Datos 100% Privados</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/60 font-bold text-sm">
+                  <Zap className="text-[#facc15]" size={20} />
+                  <span>Uso Ultra Veloz</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Visual: Premium Phone Mockup */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+              className="relative lg:block hidden"
             >
-              Contactanos
-            </motion.a>
+              <div className="relative mx-auto w-[320px] h-[640px] bg-slate-900 rounded-[3.5rem] border-[10px] border-slate-800 shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-8 bg-slate-800 rounded-b-3xl z-20" /> {/* Notch */}
+                <Image
+                  src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1000&auto=format&fit=crop"
+                  alt="App Interface"
+                  fill
+                  className="object-cover opacity-50 group-hover:scale-110 transition-transform duration-1000"
+                />
+
+                {/* Floating UI Elements inside phone */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent">
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 3 }}
+                    className="bg-white/10 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl"
+                  >
+                    <div className="h-20 w-20 bg-[#4caf50] rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                      <Zap size={40} className="text-white fill-current" />
+                    </div>
+                    <p className="text-white font-black text-2xl tracking-tight">Registro <br /> <span className="text-[#4caf50]">Exitoso</span></p>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Decorative Trophy Badge */}
+              <motion.div
+                animate={{ rotate: [-12, -8, -12], y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="absolute -top-12 -left-12 bg-[#facc15] text-slate-950 p-8 rounded-[2.5rem] font-black shadow-2xl rotate-[-12deg] flex flex-col items-center border-4 border-slate-950"
+              >
+                <Trophy size={40} className="mb-2" />
+                <div className="text-center">
+                  <p className="text-[10px] tracking-[0.2em] uppercase opacity-70">Proyecto</p>
+                  <p className="text-xl leading-none">Ganador</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

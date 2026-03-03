@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Send, Mail, MapPin } from "lucide-react"
+import { Send, Mail, MapPin, Phone, MessageSquare, Sparkles } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -16,143 +16,172 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <span className="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            Contacto
-          </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-            <span className="text-balance">Escribenos</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Tienes preguntas, sugerencias o necesitas soporte? Envian un
-            mensaje y te responderemos lo antes posible.
-          </p>
-        </motion.div>
+    <section
+      id="contacto"
+      className="py-24 lg:py-32 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #ffffff 0%, hsl(142 30% 97%) 50%, #ffffff 100%)"
+      }}
+    >
+      {/* Background Orbs con suavidad Antigravity */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-[20%] -right-[10%] h-[600px] w-[600px] rounded-full opacity-[0.05] blur-[140px]"
+          style={{ background: "#4caf50" }}
+        />
+        <div
+          className="absolute bottom-[10%] -left-[10%] h-[500px] w-[500px] rounded-full opacity-[0.03] blur-[110px]"
+          style={{ background: "#facc15" }}
+        />
+      </div>
 
-        <div className="grid items-start gap-12 lg:grid-cols-5 lg:gap-16">
-          {/* Left info */}
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
+        <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-24">
+
+          {/* Columna Izquierda: Información y Conexión */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col gap-8 lg:col-span-2"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <Mail className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-foreground">Correo Electronico</h4>
-                <p className="mt-1 text-sm text-muted-foreground">soporte@reccon.app</p>
-              </div>
+            <div className="mb-8 flex items-center gap-3">
+              <div className="h-1 w-12 rounded-full bg-[#4caf50]" />
+              <span className="text-sm font-black tracking-[0.2em] text-[#4caf50] uppercase">
+                Contacto
+              </span>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <MapPin className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-foreground">Ubicacion</h4>
-                <p className="mt-1 text-sm text-muted-foreground">Eje Cafetero, Colombia</p>
-              </div>
+
+            <h2 className="mb-8 font-sans text-4xl font-black text-slate-950 md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter">
+              Sembremos una <br />
+              <span className="text-[#4caf50] italic">nueva alianza.</span>
+            </h2>
+
+            <p className="mb-12 text-lg text-slate-600 leading-relaxed max-w-md">
+              ¿Tienes preguntas sobre cómo digitalizar tu finca o necesitas soporte técnico? Estamos listos para escucharte y crecer juntos.
+            </p>
+
+            <div className="space-y-8">
+              {[
+                { icon: Mail, label: "Escríbenos", val: "soporte@reccon.app", color: "text-blue-500", bg: "bg-blue-50" },
+                { icon: Phone, label: "Llámanos", val: "+57 317 015 7414", color: "text-[#4caf50]", bg: "bg-emerald-50" },
+                { icon: MapPin, label: "Ubicación", val: "Eje Cafetero, Colombia", color: "text-red-500", bg: "bg-red-50" }
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-5 group">
+                  <div className={`h-14 w-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-sm`}>
+                    <item.icon size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black text-slate-400 uppercase tracking-widest leading-none mb-1.5">{item.label}</p>
+                    <p className="text-lg font-bold text-slate-900">{item.val}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div
-              className="rounded-2xl p-6"
-              style={{
-                background:
-                  "linear-gradient(135deg, hsl(142 52% 32% / 0.06) 0%, hsl(100 30% 92% / 0.4) 100%)",
-              }}
+
+            {/* Quote/Trust Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="mt-16 p-8 rounded-[2rem] bg-white border border-slate-200 shadow-xl shadow-slate-200/40 relative overflow-hidden"
             >
-              <p className="text-sm font-medium leading-relaxed text-muted-foreground">
-                RECCON nacio para simplificar la vida del caficultor colombiano.
-                Si tienes ideas para mejorar la app, nos encantaria escucharte.
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Sparkles size={100} className="text-[#facc15]" />
+              </div>
+              <p className="text-slate-600 font-medium italic relative z-10">
+                "Nuestra misión es empoderar al campo colombiano con tecnología que hable su mismo idioma: Sencilla, robusta y eficiente."
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right form */}
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
+          {/* Columna Derecha: Formulario Premium */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-8 shadow-lg lg:col-span-3 lg:p-10"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label htmlFor="contact-name" className="mb-2 block text-sm font-semibold text-foreground">
-                  Nombre
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Tu nombre completo"
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-email" className="mb-2 block text-sm font-semibold text-foreground">
-                  Correo electronico
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="correo@ejemplo.com"
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
+            <div className="relative p-8 md:p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-2xl shadow-slate-200/50">
+              <h3 className="text-2xl font-black text-slate-950 mb-8 flex items-center gap-3">
+                <MessageSquare className="text-[#4caf50]" />
+                Envíanos un mensaje
+              </h3>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-black text-slate-400 uppercase tracking-widest mb-3 px-1">Tu Nombre</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Ej. Juan Valdéz"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-black text-slate-400 uppercase tracking-widest mb-3 px-1">Correo Electrónico</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="ejemplo@correo.com"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-black text-slate-400 uppercase tracking-widest mb-3 px-1">¿En qué podemos ayudarte?</label>
+                  <textarea
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Cuéntanos más sobre tu finca o tu duda..."
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300 resize-none"
+                  />
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  disabled={submitted}
+                  className={`w-full py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 shadow-xl ${submitted
+                    ? "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-[#4caf50] text-white hover:bg-[#43a047] shadow-[#4caf50]/20"
+                    }`}
+                >
+                  {submitted ? (
+                    <>¡Mensaje Enviado!</>
+                  ) : (
+                    <>
+                      <Send size={22} strokeWidth={3} />
+                      Enviar Mensaje
+                    </>
+                  )}
+                </motion.button>
+              </form>
+
+              {submitted && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 p-4 rounded-xl bg-emerald-50 text-emerald-700 text-sm font-bold text-center border border-emerald-100"
+                >
+                  Gracias por escribirnos. Te responderemos antes de 24 horas.
+                </motion.div>
+              )}
             </div>
 
-            <div>
-              <label htmlFor="contact-message" className="mb-2 block text-sm font-semibold text-foreground">
-                Mensaje
-              </label>
-              <textarea
-                id="contact-message"
-                required
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Escribe tu mensaje aqui..."
-                className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.02, boxShadow: "0 8px 24px -6px hsl(142 52% 32% / 0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-lg transition-shadow"
-            >
-              <Send className="h-5 w-5" />
-              Enviar Mensaje
-            </motion.button>
-
-            {submitted && (
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center text-sm font-medium text-primary"
-              >
-                Mensaje enviado correctamente. Gracias por contactarnos.
-              </motion.p>
-            )}
-          </motion.form>
+            {/* Floating Element background decoration */}
+            <div className="absolute -bottom-10 -right-10 h-40 w-40 bg-[#facc15]/10 rounded-full blur-3xl pointer-events-none" />
+          </motion.div>
         </div>
       </div>
     </section>
