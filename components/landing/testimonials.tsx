@@ -60,7 +60,7 @@ export function Testimonials() {
                         <span>Voces de nuestra tierra</span>
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl font-sans font-black text-slate-900 tracking-tight">
-                        Confianza que <span className="text-[#4caf50] italic">brota del campo</span>
+                        Confianza que <span className="text-brand italic">brota del campo</span>
                     </h2>
                 </div>
 
@@ -81,7 +81,7 @@ export function Testimonials() {
                             </p>
 
                             <div className="flex items-center gap-4">
-                                <div className="h-12 w-12 rounded-full bg-emerald-600 flex items-center justify-center text-white font-black text-xl">
+                                <div className="h-12 w-12 rounded-full bg-brand flex items-center justify-center text-white font-black text-xl">
                                     {t.author[0]}
                                 </div>
                                 <div>

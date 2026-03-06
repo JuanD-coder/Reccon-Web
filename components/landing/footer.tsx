@@ -47,11 +47,11 @@ export function Footer() {
                 <Image src={Logo} alt="RECCON" className="w-full h-full object-contain" />
               </motion.div>
               <div className="flex flex-col">
-                <span className="text-2xl font-black text-slate-950 tracking-tighter leading-none">RECCON</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">Recoleccion y Contabilidad</span>
+                <span className="text-2xl font-bold tracking-[0.05em] text-slate-950 leading-none">RECCON</span>
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-600">Recoleccion y Contabilidad</span>
               </div>
             </a>
-            <p className="text-slate-500 font-bold text-base leading-relaxed">
+            <p className="text-black text-base leading-relaxed">
               Empoderando al campo colombiano con tecnología sencilla, robusta y eficiente para la gestión de cultivos.
             </p>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -4, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="h-11 w-11 rounded-xl bg-[#4caf50] border border-slate-200 flex items-center justify-center shadow-lg shadow-slate-200/30 hover:border-[#4caf50]/30 transition-all"
+                className="h-11 w-11 rounded-xl bg-brand border border-slate-200 flex items-center justify-center shadow-lg shadow-slate-200/30 hover:border-brand/30 transition-all"
               >
                 <div className="relative h-5 w-5">
                   <Image
@@ -85,10 +85,10 @@ export function Footer() {
         {/* Bottom Bar: Copyright & Status */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row-reverse items-center justify-between gap-6">
           <div className="text-center md:text-right">
-            <p className="text-slate-900 font-black text-sm tracking-tight">
+            <p className="text-slate-900 font-bold text-sm tracking-tight">
               &copy; {new Date().getFullYear()} RECCON. Todos los derechos reservados.
             </p>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mt-1">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 mt-1">
               Hecho con <span className="text-red-500">❤</span> en el Eje Cafetero
             </p>
           </div>

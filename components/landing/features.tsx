@@ -1,6 +1,6 @@
 "use client"
 
-import { Smartphone, WifiOff, BarChart3, FileSpreadsheet, CheckCircle2 } from "lucide-react"
+import { Smartphone, WifiOff, BarChart3, FileSpreadsheet } from "lucide-react"
 import { motion } from "framer-motion"
 import { CoffeeBean, CoffeeLeaf, CoffeeCherries, CoffeeBasket } from "./coffee-elements"
 import { cn } from "@/lib/utils"
@@ -88,7 +88,7 @@ export function Features() {
               className="font-sans text-4xl font-black tracking-tight text-black md:text-5xl lg:text-6xl max-w-2xl"
             >
               Tecnología diseñada <br className="hidden sm:block" />
-              <span className="text-[#4caf50] italic">para el caficultor.</span>
+              <span className="text-brand italic">para el caficultor.</span>
             </motion.h2>
 
             <motion.p

@@ -27,7 +27,7 @@ export function ContactSection() {
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div
           className="absolute top-[20%] -right-[10%] h-[600px] w-[600px] rounded-full opacity-[0.05] blur-[140px]"
-          style={{ background: "#4caf50" }}
+          style={{ background: "hsl(var(--brand))" }}
         />
         <div
           className="absolute bottom-[10%] -left-[10%] h-[500px] w-[500px] rounded-full opacity-[0.03] blur-[110px]"
@@ -46,15 +46,15 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-8 flex items-center gap-3">
-              <div className="h-1 w-12 rounded-full bg-[#4caf50]" />
-              <span className="text-sm font-black tracking-[0.2em] text-[#4caf50] uppercase">
+              <div className="h-1 w-12 rounded-full bg-brand" />
+              <span className="text-sm font-black tracking-[0.2em] text-brand uppercase">
                 Contacto
               </span>
             </div>
 
             <h2 className="mb-8 font-sans text-4xl font-black text-slate-950 md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter">
               Sembremos una <br />
-              <span className="text-[#4caf50] italic">nueva alianza.</span>
+              <span className="text-brand italic">nueva alianza.</span>
             </h2>
 
             <p className="mb-12 text-lg text-slate-600 leading-relaxed max-w-md">
@@ -64,7 +64,7 @@ export function ContactSection() {
             <div className="space-y-8">
               {[
                 { icon: Mail, label: "Escríbenos", val: "soporte@reccon.app", color: "text-blue-500", bg: "bg-blue-50" },
-                { icon: Phone, label: "Llámanos", val: "+57 317 015 7414", color: "text-[#4caf50]", bg: "bg-emerald-50" },
+                { icon: Phone, label: "Llámanos", val: "+57 317 015 7414", color: "text-brand", bg: "bg-emerald-50" },
                 { icon: MapPin, label: "Ubicación", val: "Eje Cafetero, Colombia", color: "text-red-500", bg: "bg-red-50" }
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-5 group">
@@ -106,7 +106,7 @@ export function ContactSection() {
           >
             <div className="relative p-8 md:p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-2xl shadow-slate-200/50">
               <h3 className="text-2xl font-black text-slate-950 mb-8 flex items-center gap-3">
-                <MessageSquare className="text-[#4caf50]" />
+                <MessageSquare className="text-brand" />
                 Envíanos un mensaje
               </h3>
 
@@ -119,7 +119,7 @@ export function ContactSection() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Ej. Juan Valdéz"
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand focus:ring-4 focus:ring-brand/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="ejemplo@correo.com"
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand focus:ring-4 focus:ring-brand/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300"
                   />
                 </div>
 
@@ -143,7 +143,7 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Cuéntanos más sobre tu finca o tu duda..."
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#4caf50] focus:ring-4 focus:ring-[#4caf50]/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300 resize-none"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand focus:ring-4 focus:ring-brand/5 outline-none transition-all font-bold text-slate-950 placeholder:text-slate-300 resize-none"
                   />
                 </div>
 
@@ -154,7 +154,7 @@ export function ContactSection() {
                   disabled={submitted}
                   className={`w-full py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 shadow-xl ${submitted
                     ? "bg-slate-100 text-slate-400 cursor-not-allowed"
-                    : "bg-[#4caf50] text-white hover:bg-[#43a047] shadow-[#4caf50]/20"
+                    : "bg-brand text-white hover:bg-[#43a047] shadow-brand/20"
                     }`}
                 >
                   {submitted ? (

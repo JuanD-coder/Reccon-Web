@@ -106,7 +106,7 @@ export function Hero() {
               href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject&hl=es_NI"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-[#4caf50] hover:bg-[#388e3c] px-8 py-4 text-base font-bold text-primary-foreground shadow-lg transition-shadow"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-brand hover:bg-[#388e3c] px-8 py-4 text-base font-bold text-primary-foreground shadow-lg transition-shadow"
             >
               <Image
                 src={GooglePlayIcon}
@@ -140,7 +140,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
         href="#funciones"
-        className="absolute bottom-32 left-1/2 z-10 -translate-x-1/2 animate-bounce text-primary/50 transition-colors hover:text-primary"
+        className="absolute bottom-16 left-1/2 z-10 -translate-x-1/2 animate-bounce text-primary/50 transition-colors hover:text-primary"
         aria-label="Desplazar hacia abajo"
       >
         <ArrowDown className="h-6 w-6" />

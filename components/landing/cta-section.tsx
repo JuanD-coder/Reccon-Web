@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Download, MessageCircle, Sparkles, Trophy, ShieldCheck, Zap } from "lucide-react"
+import { MessageCircle, ShieldCheck, Zap } from "lucide-react"
+
+import GooglePlayIcon from "../../public/images/icons/ic-google-play.png"
+import CtaScreenshot from "../../public/images/background/cta-screenshot.png"
 
 export function CTASection() {
   return (
@@ -21,7 +24,7 @@ export function CTASection() {
           }}
         >
           {/* Orbs de fondo Antigravity */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#4caf50]/20 rounded-full blur-[140px] -mr-80 -mt-80 opacity-60" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/20 rounded-full blur-[140px] -mr-80 -mt-80 opacity-60" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#facc15]/10 rounded-full blur-[100px] -ml-40 -mb-40 opacity-40" />
 
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -33,17 +36,17 @@ export function CTASection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#4caf50] text-xs font-black uppercase tracking-widest mb-8">
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-brand text-xs font-black uppercase tracking-widest mb-8">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4caf50] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4caf50]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
                 </span>
                 Disponible ahora en Google Play
               </div>
 
               <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans font-black text-white leading-[1.05] mb-8 tracking-tighter">
                 Transforma tu <br />
-                <span className="text-[#4caf50] italic">finca hoy.</span>
+                <span className="text-brand italic">finca hoy.</span>
               </h2>
 
               <p className="text-xl text-slate-400 mb-10 leading-relaxed max-w-lg">
@@ -56,9 +59,14 @@ export function CTASection() {
                   whileTap={{ scale: 0.95 }}
                   href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject&hl=es_NI"
                   target="_blank"
-                  className="bg-[#4caf50] hover:bg-[#43a047] text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-3 shadow-2xl shadow-[#4caf50]/30 transition-all duration-300"
+                  className="bg-brand hover:bg-[#43a047] text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-3 shadow-2xl shadow-brand/30 transition-all duration-300"
                 >
-                  <Download size={24} strokeWidth={3} />
+                  <Image
+                    src={GooglePlayIcon}
+                    alt="Google Play Store"
+                    width={24}
+                    height={24}
+                  />
                   <span>Descargar App</span>
                 </motion.a>
 
@@ -76,7 +84,7 @@ export function CTASection() {
               {/* Trust Indicators */}
               <div className="mt-12 flex flex-wrap gap-8 items-center border-t border-white/10 pt-10">
                 <div className="flex items-center gap-3 text-white/60 font-bold text-sm">
-                  <ShieldCheck className="text-[#4caf50]" size={20} />
+                  <ShieldCheck className="text-brand" size={20} />
                   <span>Datos 100% Privados</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/60 font-bold text-sm">
@@ -94,42 +102,15 @@ export function CTASection() {
               transition={{ duration: 1, type: "spring", bounce: 0.4 }}
               className="relative lg:block hidden"
             >
-              <div className="relative mx-auto w-[320px] h-[640px] bg-slate-900 rounded-[3.5rem] border-[10px] border-slate-800 shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden">
+              <div className="relative mx-auto w-[320px] h-[640px] bg-slate-900 rounded-[3.5rem] border-[10px] border-slate-800 overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-8 bg-slate-800 rounded-b-3xl z-20" /> {/* Notch */}
                 <Image
-                  src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1000&auto=format&fit=crop"
+                  src={CtaScreenshot}
                   alt="App Interface"
                   fill
-                  className="object-cover opacity-50 group-hover:scale-110 transition-transform duration-1000"
+                  className="object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000"
                 />
-
-                {/* Floating UI Elements inside phone */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent">
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 3 }}
-                    className="bg-white/10 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl"
-                  >
-                    <div className="h-20 w-20 bg-[#4caf50] rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-lg">
-                      <Zap size={40} className="text-white fill-current" />
-                    </div>
-                    <p className="text-white font-black text-2xl tracking-tight">Registro <br /> <span className="text-[#4caf50]">Exitoso</span></p>
-                  </motion.div>
-                </div>
               </div>
-
-              {/* Decorative Trophy Badge */}
-              <motion.div
-                animate={{ rotate: [-12, -8, -12], y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute -top-12 -left-12 bg-[#facc15] text-slate-950 p-8 rounded-[2.5rem] font-black shadow-2xl rotate-[-12deg] flex flex-col items-center border-4 border-slate-950"
-              >
-                <Trophy size={40} className="mb-2" />
-                <div className="text-center">
-                  <p className="text-[10px] tracking-[0.2em] uppercase opacity-70">Proyecto</p>
-                  <p className="text-xl leading-none">Ganador</p>
-                </div>
-              </motion.div>
             </motion.div>
 
           </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Smartphone, Users, Award, ShieldCheck } from "lucide-react"
+import { Smartphone, Users, ShieldCheck } from "lucide-react"
 
 const stats = [
     {
@@ -11,7 +11,7 @@ const stats = [
     },
     {
         icon: Smartphone,
-        label: "Offline First",
+        label: "Sin coneccion a internet",
         subtext: "Diseñado para el campo",
     },
     {
@@ -40,7 +40,7 @@ export function SocialProof() {
                             transition={{ delay: index * 0.1 }}
                             className="flex items-center gap-5 group"
                         >
-                            <div className="h-16 w-16 rounded-2xl bg-[#4caf50]/5 flex items-center justify-center text-[#4caf50] border border-[#4caf50]/10 group-hover:bg-[#4caf50] group-hover:text-white transition-all duration-500 shadow-sm">
+                            <div className="h-16 w-16 rounded-2xl bg-brand/5 flex items-center justify-center text-brand border border-brand/10 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-sm">
                                 <stat.icon size={28} />
                             </div>
                             <div>

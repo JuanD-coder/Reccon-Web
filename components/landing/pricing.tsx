@@ -1,10 +1,9 @@
 "use client"
 
-import { Check, Star, Zap } from "lucide-react"
+import { Check } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Logo from "../../public/images/reccon_LOGO_Icon.svg"
-import { cn } from "@/lib/utils"
 
 const plans = [
   {
@@ -17,14 +16,15 @@ const plans = [
       "Planilla de recolección diaria",
       "Registro de kilos por persona",
       "Exportación básica a Excel",
-      "Soporte por comunidad",
+      "Genera informes de tus recolecciones",
     ],
     cta: "Empezar Gratis",
+    href: "https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject&hl=es_NI",
     theme: {
       bg: "bg-emerald-50/40",
-      border: "border-[#4caf50]",
-      accent: "text-[#4caf50]",
-      button: "border-2 border-[#4caf50] text-[#4caf50] hover:bg-[#4caf50] hover:text-white bg-transparent transition-all duration-300",
+      border: "border-brand",
+      accent: "text-brand",
+      button: "border-2 border-brand text-brand hover:bg-brand hover:text-white bg-transparent transition-all duration-300",
       iconBg: "bg-emerald-100 text-emerald-600",
       glow: "from-emerald-200/20 to-transparent"
     }
@@ -35,14 +35,15 @@ const plans = [
     price: "Premium",
     featured: true,
     features: [
-      "Todo lo de la versión Finca",
+      "Todo lo de la versión Free",
       "Copia de seguridad en la nube",
-      "Acceso desde múltiples celulares",
-      "Liquidaciones y nómina avanzada",
-      "Gráficas de cultivo y rentabilidad",
+      "Acceso desde cualquier dispositivo, en cualquier lugar",
+      "Control remoto de tus recolecciones, ideal para supervisores",
+      "Historial de tus informes de recolección detallado",
       "Atención preferencial 24/7",
     ],
     cta: "Obtener versión Pro",
+    href: "https://wa.me/573170157414",
     theme: {
       bg: "bg-amber-50/50",
       border: "border-amber-200",
@@ -73,8 +74,12 @@ const CoffeeCherry = ({ size = 14, className = "" }) => (
 )
 
 export function Pricing() {
+  const handlePlanClick = (href: string) => {
+    window.open(href, "_blank", "noopener,noreferrer")
+  }
+
   return (
-    <section id="versiones" className="relative overflow-hidden py-24 lg:py-32 bg-white">
+    <section id="versiones" className="relative overflow-hidden py-14 lg:py-20 bg-white">
       {/* Esferas ambientales sutiles (Sunlight style) */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div
@@ -99,7 +104,7 @@ export function Pricing() {
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-sans font-black text-slate-950 tracking-tighter leading-[0.9]">
             Diseñada para <br className="hidden md:block" />
-            <span className="text-[#4caf50]">dar frutos</span>
+            <span className="text-brand">dar frutos</span>
           </h2>
           <p className="mt-6 text-slate-500 text-lg max-w-xl mx-auto font-medium">
             Elige el plan que mejor se adapte al tamaño de tu cosecha y empieza a digitalizar tu finca hoy mismo.
@@ -114,7 +119,8 @@ export function Pricing() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`relative p-8 md:p-12 rounded-[2.8rem] border backdrop-blur-sm transition-all duration-500 group ${plan.theme.bg} ${plan.theme.border} ${plan.featured ? "shadow-2xl shadow-amber-200/20 ring-1 ring-amber-200/50" : "shadow-sm"
+              onClick={() => handlePlanClick(plan.href)}
+              className={`relative p-8 md:p-12 rounded-[2.8rem] border backdrop-blur-sm transition-all duration-500 group cursor-pointer hover:shadow-2xl hover:scale-[1.01] active:scale-[0.98] ${plan.theme.bg} ${plan.theme.border} ${plan.featured ? "shadow-2xl shadow-amber-200/20 ring-1 ring-amber-200/50" : "shadow-sm"
                 }`}
             >
               {plan.featured && (
@@ -170,6 +176,10 @@ export function Pricing() {
               <motion.button
                 whileHover={{ y: -4, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={(e) => {
+                  e.stopPropagation() // Evita que el click del botón active el click del pane dos veces
+                  handlePlanClick(plan.href)
+                }}
                 className={`w-full py-5 rounded-2xl font-sans font-black text-lg transition-all shadow-xl shadow-transparent hover:shadow-current/20 ${plan.theme.button}`}
               >
                 {plan.cta}
@@ -181,7 +191,7 @@ export function Pricing() {
         <div className="mt-16 text-center">
           <p className="text-slate-400 text-sm font-medium">
             ¿Buscas una solución para tu asociación?
-            <span className="text-[#4caf50] font-black ml-2 cursor-pointer hover:underline underline-offset-4">
+            <span className="text-brand font-black ml-2 cursor-pointer hover:underline underline-offset-4">
               Hablemos de RECCON Enterprise
             </span>
           </p>

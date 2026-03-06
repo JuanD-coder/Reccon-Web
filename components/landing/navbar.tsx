@@ -38,17 +38,12 @@ export function Navbar() {
 
         {/* Logo Section - Estilo Referencia */}
         <a href="#hero" className="flex items-center gap-3.5 group">
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className="flex h-11 w-11 items-center justify-center bg-white rounded-2xl shadow-lg shadow-slate-200/50 p-2 border border-slate-100 group-hover:border-[#4caf50]/30 transition-all"
-          >
-            <Image src={Logo} alt="Logo de RECCON" className="w-full h-full object-contain" />
-          </motion.div>
+          <Image src={Logo} alt="Logo de RECCON" width={50} height={50} />
           <div className="flex flex-col">
-            <span className="text-2xl font-black leading-none tracking-tighter text-slate-950">
+            <span className="text-2xl font-bold leading-none tracking-[0.05em] text-slate-950">
               RECCON
             </span>
-            <span className="hidden text-[10px] font-black uppercase tracking-[0.15em] text-slate-500 sm:block mt-1">
+            <span className="hidden text-[10px] uppercase tracking-[0.15em] text-slate-800 sm:block mt-1">
               Recolección y Contabilidad
             </span>
           </div>
@@ -62,10 +57,10 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-sm font-bold text-slate-600 transition-colors hover:text-[#4caf50] group/link"
+                className="relative text-sm font-bold text-slate-600 transition-colors hover:text-brand group/link"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4caf50] transition-all duration-300 group-hover/link:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover/link:w-full" />
               </a>
             ))}
           </div>
@@ -73,7 +68,7 @@ export function Navbar() {
           {/* User Action Group - Estilo Imagen Referencia */}
           <div className="flex items-center gap-5 pl-8 border-l border-slate-200">
             <div className="flex items-center gap-2 group/user cursor-pointer">
-              <UserCircle2 className="w-5 h-5 text-slate-400 group-hover/user:text-[#4caf50] transition-colors" />
+              <UserCircle2 className="w-5 h-5 text-slate-400 group-hover/user:text-brand transition-colors" />
               <span className="text-sm font-black text-slate-900">Bienvenido</span>
             </div>
 
@@ -85,7 +80,7 @@ export function Navbar() {
               whileTap={{ scale: 0.98 }}
               href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject"
               target="_blank"
-              className="inline-flex items-center justify-center rounded-2xl bg-[#4caf50] px-6 py-3 text-sm font-black text-white shadow-xl shadow-emerald-500/20 hover:bg-[#43a047] hover:shadow-emerald-500/30 transition-all"
+              className="inline-flex items-center justify-center rounded-2xl bg-brand px-6 py-3 text-sm font-black text-white shadow-xl shadow-emerald-500/20 hover:bg-[#43a047] hover:shadow-emerald-500/30 transition-all"
             >
               Iniciar Sesión
             </motion.a>
@@ -132,7 +127,7 @@ export function Navbar() {
                 <a
                   href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center rounded-2xl bg-[#4caf50] py-4 text-base font-black text-white shadow-lg"
+                  className="flex items-center justify-center rounded-2xl bg-brand py-4 text-base font-black text-white shadow-lg"
                 >
                   Iniciar Sesión
                 </a>

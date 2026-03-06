@@ -16,7 +16,7 @@ const steps = [
         title: "Registra el día",
         desc: "Anota los kilos de cada recolector. No necesitas internet, la app guarda todo en el momento.",
         icon: UserPlus,
-        color: "bg-[#4caf50]",
+        color: "bg-brand",
     },
     {
         number: "03",
@@ -29,7 +29,7 @@ const steps = [
 
 export function StepsSection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-14 bg-white relative overflow-hidden">
             {/* Esferas de color ambientales */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                 {/* Izquierda Arriba */}
@@ -56,7 +56,7 @@ export function StepsSection() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-sans font-black text-slate-900 tracking-tight"
                     >
-                        Tan fácil como <span className="text-[#4caf50] italic">contar granos</span>
+                        Tan fácil como <span className="text-brand italic">contar granos</span>
                     </motion.h2>
                     <p className="mt-4 text-slate-500 text-lg max-w-2xl mx-auto">
                         Tres pasos simples para modernizar tu administración y ahorrar horas de trabajo manual.
