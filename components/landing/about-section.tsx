@@ -109,9 +109,9 @@ export function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative aspect-square max-w-[500px] mx-auto rounded-[3rem] shadow-2xl shadow-brand/10 border border-white/50 bg-white p-4 group">
+            <div className="relative min-h-[420px] sm:aspect-square max-w-[500px] mx-auto rounded-[3rem] shadow-2xl shadow-brand/10 border border-white/50 bg-white p-4 group">
 
-              <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-slate-950 flex flex-col items-center justify-center p-8 text-center">
+              <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-slate-950 flex flex-col items-center justify-center p-6 text-center">
 
                 {/* Imagen de Fondo del Carrusel con transiciones */}
                 <motion.div
@@ -132,7 +132,7 @@ export function AboutSection() {
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "backOut" }}
-                  className="relative z-10 flex flex-col items-center"
+                  className="relative z-10 flex flex-col items-center px-2 py-4 "
                 >
                   <div className={`mb-6 h-20 w-20 rounded-3xl bg-gradient-to-br ${milestones[activeStep].color} flex items-center justify-center text-white shadow-2xl shadow-current/20`}>
                     {(() => {
@@ -149,7 +149,7 @@ export function AboutSection() {
                     {milestones[activeStep].title}
                   </h4>
 
-                  <p className="text-slate-400 text-base leading-relaxed max-w-[320px]">
+                  <p className="text-slate-400 text-base leading-relaxed max-w-[320px] mb-8">
                     {milestones[activeStep].description}
                   </p>
                 </motion.div>
