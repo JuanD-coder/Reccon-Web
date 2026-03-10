@@ -123,12 +123,12 @@ export function Hero() {
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 12px 30px -8px hsl(0 72% 44% / 0.3)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 12px 30px -8px hsl(142 52% 32% / 0.35)" }}
               whileTap={{ scale: 0.97 }}
-              href="#contacto"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#e53935] hover:bg-[#c62828] px-8 py-4 text-base font-bold text-accent-foreground shadow-lg transition-shadow"
+              href="#funciones"
+              className="inline-flex h-[60px] items-center justify-center rounded-xl border-2 border-brand/20 bg-white/50 px-8 text-base font-bold text-brand backdrop-blur-sm transition-all hover:border-brand/40 hover:shadow-current/20"
             >
-              Registrarse
+              Explorar Funciones
             </motion.a>
           </div>
         </motion.div>

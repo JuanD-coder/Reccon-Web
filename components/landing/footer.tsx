@@ -52,7 +52,8 @@ export function Footer() {
               </div>
             </a>
             <p className="text-black text-base leading-relaxed">
-              Empoderando al campo colombiano con tecnología sencilla, robusta y eficiente para la gestión de cultivos.
+              Transformamos la recolección y contabilidad de tu finca con tecnología sencilla y robusta,
+              diseñada para que el campo colombiano nunca deje de crecer.
             </p>
           </div>
 

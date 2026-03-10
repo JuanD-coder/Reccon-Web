@@ -9,7 +9,6 @@ import Logo from "../../public/images/reccon_LOGO_Icon.svg";
 const navLinks = [
   { label: "Inicio", href: "#hero" },
   { label: "Funciones", href: "#funciones" },
-  { label: "Versiones", href: "#versiones" },
   { label: "Nosotros", href: "#acerca" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -71,19 +70,6 @@ export function Navbar() {
               <UserCircle2 className="w-5 h-5 text-slate-400 group-hover/user:text-brand transition-colors" />
               <span className="text-sm font-black text-slate-900">Bienvenido</span>
             </div>
-
-            {/* Divisor Vertical Elegante */}
-            <div className="h-5 w-[1.5px] bg-slate-200" />
-
-            <motion.a
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject"
-              target="_blank"
-              className="inline-flex items-center justify-center rounded-2xl bg-brand px-6 py-3 text-sm font-black text-white shadow-xl shadow-emerald-500/20 hover:bg-[#43a047] hover:shadow-emerald-500/30 transition-all"
-            >
-              Iniciar Sesión
-            </motion.a>
           </div>
         </div>
 
@@ -124,13 +110,6 @@ export function Navbar() {
                   <UserCircle2 className="w-5 h-5 text-slate-400" />
                   <span className="text-base font-black text-slate-900">Bienvenido</span>
                 </div>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.rojasdev.apprecconproject"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center rounded-2xl bg-brand py-4 text-base font-black text-white shadow-lg"
-                >
-                  Iniciar Sesión
-                </a>
               </div>
             </div>
           </motion.div>
